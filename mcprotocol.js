@@ -1353,7 +1353,7 @@ function processMBWriteItem(theData, theItem, thePointer, frame) {
 			theItem.writeQualityBuffer.fill(0xFF);  // Note that ff is BAD in our fill here. 		
 			return 0;   			// Hard to increment the pointer so we call it a malformed packet and we're done.      
 		}
-		writeResponse = theData.readUInt8(9);
+		writeResponse = theData.readUInt8(1);
 	}
 	
 	if (writeResponse !== 0x00 || (theData[0] !== 0x82) && (theData[0] !== 0x83)) {
